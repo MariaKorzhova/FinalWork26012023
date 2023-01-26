@@ -15,17 +15,24 @@ string[] array2 = FillArrayAndPrint(array1);
 
 string[] FillArrayAndPrint(string[] Array1)
 {
-string[] Array = new string[5];
-int n = 0;
-for (int i = 0; i < Array1.Length; i++)
-{
-    if (Array1[i].Length <= 3)
+    string[] Array = new string[5];
+    int n = 0;
+    for (int i = 0; i < Array1.Length; i++)
     {
-        Array[n] = Array1[i];
-        n = n + 1;
+        if (Array1[i].Length <= 3)
+        {
+            Array[n] = Array1[i];
+            n = n + 1;
+        }
     }
-}
-System.Console.Write(string.Join(" ", Array));
-return Array;
+    if (n == 0)
+    {
+        Console.WriteLine("Длина каждого элемента первоначального массива составляет больше трёх символов");
+    }
+    else
+    {
+        System.Console.Write(string.Join(" ", Array));
+    }
+    return Array;
 }
 
